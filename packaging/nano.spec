@@ -9,8 +9,8 @@ Group:          Productivity/Editors/Other
 Source0:        %{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-BuildRequires:  libfile-devel
-BuildRequires:  ncurses-devel
+BuildRequires:  file-devel
+BuildRequires:  pkgconfig(ncurses)
 Recommends:     %{name}-locale = %{version}
 
 %description
