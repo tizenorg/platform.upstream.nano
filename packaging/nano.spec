@@ -7,17 +7,14 @@ License:        GPL-3.0+
 Url:            http://www.nano-editor.org/
 Group:          Productivity/Editors/Other
 Source0:        %{name}-%{version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 BuildRequires:  file-devel
 BuildRequires:  pkgconfig(ncurses)
-Recommends:     %{name}-locale = %{version}
 
 %description
 GNU nano is a small and friendly text editor. It aims to emulate the
 Pico text editor while also offering a few enhancements.
 
-%lang_package
 
 %prep
 %setup -q
@@ -41,11 +38,9 @@ rm -rf %{buildroot}%{_mandir}/fr
 
 %find_lang %{name} --all-name
 
-%post
-%install_info --info-dir=%{_infodir} %{_infodir}/%{name}.info%{ext_info}
+%docs_package
 
-%preun
-%install_info_delete --info-dir=%{_infodir} %{_infodir}/%{name}.info%{ext_info}
+%lang_package
 
 %files
 %defattr(-,root,root,-)
@@ -53,6 +48,5 @@ rm -rf %{buildroot}%{_mandir}/fr
 %{_bindir}/rnano
 %{_datadir}/nano/
 
-%docs_package
 
 %changelog
