@@ -43,6 +43,7 @@ rm -rf %{buildroot}%{_mandir}/fr
 %lang_package
 
 %files
+%license COPYING
 %defattr(-,root,root,-)
 %{_bindir}/nano
 %{_bindir}/rnano
