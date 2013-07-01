@@ -7,6 +7,7 @@ License:        GPL-3.0+
 Url:            http://www.nano-editor.org/
 Group:          Productivity/Editors/Other
 Source0:        %{name}-%{version}.tar.bz2
+Source1001: 	nano.manifest
 
 BuildRequires:  file-devel
 BuildRequires:  pkgconfig(ncurses)
@@ -18,6 +19,7 @@ Pico text editor while also offering a few enhancements.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 # Remove build time references so build-compare can do its work
 FAKE_BUILDTIME=$(LC_ALL=C date -u -r %{_sourcedir}/%{name}.changes '+%%H:%%M')
@@ -43,6 +45,7 @@ rm -rf %{buildroot}%{_mandir}/fr
 %lang_package
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root,-)
 %{_bindir}/nano
