@@ -8,6 +8,7 @@ Url:            http://www.nano-editor.org/
 Group:          Productivity/Editors/Other
 Source0:        %{name}-%{version}.tar.bz2
 Source1001: 	nano.manifest
+Source1002:     nano.changes
 
 BuildRequires:  file-devel
 BuildRequires:  pkgconfig(ncurses)
